@@ -77,10 +77,8 @@ WSGI_APPLICATION = 'mysite.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': 'mysite_db',
-        'USER': 'root',
-        'PASSWORD': '9463',
+        'ENGINE': 'django.db.backends.sqlite3',  # або 'mysql', 'sqlite3', 'oracle'
+        'NAME': 'mysite_db', 'USER': 'root', 'PASSWORD': '9463'
     }
 
 }
@@ -126,3 +124,15 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+# Static files (CSS, JavaScript, Images)
+# https://docs.djangoproject.com/en/3.0/howto/static-files/
+
+import os
+STATIC_URL = '/static/'
+
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
